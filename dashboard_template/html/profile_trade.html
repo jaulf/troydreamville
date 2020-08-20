@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="../css/index.css" >
+    <link rel='stylesheet' href='http://localhost:5000/css/ind_dashboard.css'>
+    <title>Document</title>
+</head>
+<body>
+    
+<header>
+
+    <div id='nav1' class='nav'>
+
+        <div class='nav-one'>
+            <a href='http://localhost:5000/html/home.html'>Troydreamville</a>
+        </div>
+
+        <div class='nav-two'>
+            <a href='index.html'>Home</a>
+            <a href='trade.html'>Trade</a>
+            <a href='transactions.html'>Transactions</a>
+        </div>
+
+        <div class='contain-nav-right'>
+
+            <div class='nav-three'>
+                <div><a href='#'>Buy</a></div>
+                <div><a href='#'>Sell</a></div>
+            </div>
+
+            <div class='nav-four'>
+                <div class='round-img'><img src="../image/notif.svg" alt=""></div>
+                <div><img onclick="showme()" src="../image/avatar.jfif" alt=""></div>
+                <div id='drop'>
+                        <div><a href='profile.html'>My profile</a></div>
+                        <div><a>Logout</a></div>
+                    </div>
+            </div>
+    
+        </div>
+
+    </div>
+
+    <div id='nav2' class='mobile-nav'>
+        <div class='mnav1'>
+            <div class='start'><a href="#">Troydreamville</a></div>
+            <div class='end'><a href='javascript:void(0)' onclick="openNav()">&#9776;</a></div>
+        </div>
+    </div>
+
+    <!-- Mobile Side Nav -->
+    <div id="myNav" class="overlay"> 
+        <a style='color:white;text-decoration: none;' href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
+        
+        <nav class="overlay-nav"> 
+            <div class="side-nav">
+                <div><a onclick="closeNav()" href="#">Home</a></div>
+                <div><a onclick="closeNav()" href="#">Trade</a></div>
+                <div><a onclick="closeNav()" href="#">Transaction</a></div>
+                <div><a onclick="closeNav()" href="#">Notification</a></div>
+                <div><a onclick="closeNav()" href="#">My Profile</a></div>
+                <div><a onclick="closeNav()" href="#">Sign Out</a></div>
+            </div>
+        </nav>
+    
+    </div>
+
+</header>
+
+<section>
+
+    <div class="cont">
+
+        <div class='profile-links'>
+            <a class='startt' href='profile.html'>Main Profile</a>
+            <a class="active" href='#'>Trade Info</a>
+        </div>
+
+        <div class="cont-fcover">
+            <div class='cont-form'>
+
+                <div class='form-head'>
+                    <h2>Trade Profile</h2>
+                </div>
+
+                <form class='form-card-cover'>
+                    <div class='form-card'>
+
+                        <label for='bitcoin'>Bitcoin Wallet Address</label>
+                        <input type='bitcoin' name='bitcoin' placeholder='btc wallet address' />
+
+                    </div>
+                    <div class='form-card'>
+                        <label for='ethereum'>Ethereum wallet Address</label>
+                        <input type='ethereum' name='ethereum' placeholder='eth wallet address' />
+
+                    </div>
+                    <div class='form-card'>
+                        <label for='banks'>Select your bank</label>
+                        <select id="banks" name="banks">
+                            <option value=''>Click to Select a Bank</option>
+                            <option value="Access Bank Plc">Access Bank Plc</option>
+                            <option value="Fidelity Bank Plc">Fidelity Bank Plc</option>
+                            <option value="First City Monument Bank Limited">First City Monument Bank Limited</option>
+                            <option value="First Bank of Nigeria Limited">First Bank of Nigeria Limited</option>
+                            <option value="Guaranty Trust Bank Plc">Guaranty Trust Bank Plc</option>
+                            <option value="Union Bank of Nigeria Plc">Union Bank of Nigeria Plc</option>
+                            <option value="United Bank for Africa Plc">United Bank for Africa Plc</option>
+                            <option value="Zenith Bank Plc">Zenith Bank Plc</option>
+                            <option value="Standard Chartered">Standard Chartered</option>
+                            <option value="Sterling Bank Plc">Sterling Bank Plc</option>
+                            <option value="Ecobank Nigeria Plc">Ecobank Nigeria Plc</option>
+                            <option value="Citibank Nigeria Limited">Citibank Nigeria Limited</option>
+                            <option value="Polaris Bank Limited. The successor to Skye Bank Plc.">Polaris Bank Limited. The successor to Skye Bank Plc.</option>
+                            <option value="Stanbic IBTC Bank Plc">Stanbic IBTC Bank Plc</option>
+                            <option value="Heritage Banking Company Limited">Heritage Banking Company Limited</option>
+                            <option value="Wema Bank Plc">Wema Bank Plc</option>
+                            <option value="Unity Bank Plc">Unity Bank Plc</option>
+                            <option value="Titan Trust Bank Limited">Titan Trust Bank Limited</option>
+                            <option value="Keystone Bank Limited">Keystone Bank Limited</option>
+                            <option value="Globus Bank Limited">Globus Bank Limited</option>
+                            <option value="SunTrust Bank Nigeria Limited">SunTrust Bank Nigeria Limited</option>
+                            <option value='Providus Bank Limited'>Providus Bank Limited</option>
+                        </select>
+
+                    </div>
+                    <div class='form-card'>
+                        <label for='bank_account_name'>Bank Account Name</label>
+                        <input type='text' name='bank_account_name' placeholder='Account Name' />
+                    </div>
+                    <div class='form-card'>
+                        <label for='bank_account_number'>Bank Account Number</label>
+                        <input type='text' name='bank_account_number' placeholder='Account Number' />
+
+                    </div>
+                    <div class='but-save'>
+                        <button>Update</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+
+<script>
+    function showme() {
+    document.getElementById("drop").classList.toggle("show");
+    }
+
+
+    function closeNav() {
+    document.getElementById("myNav").style.display = "none";
+    } 
+
+
+    function openNav() {
+    if (document.getElementById('myNav').style.display === 'block') {
+        document.getElementById('myNav').style.display = 'none';
+    } else {
+        document.getElementById('myNav').style.display = 'block';
+    }
+    }
+
+
+</script>
+
+</html>

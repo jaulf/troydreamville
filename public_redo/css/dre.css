@@ -1,0 +1,66 @@
+
+@import url("https://fonts.googleapis.com/css?family=Inter");
+  
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height:100%;
+}
+
+body {
+    font-family : 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    margin:0; 
+    height: 100%;
+    color: white;
+} 
+
+.Head {
+    overflow: hidden;
+    height: 100%;
+    background-image: url("");
+    background-position: center;
+    background-color: rgba(0,0,0 , 8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10% 0 15%;
+}
+
+.did {
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    align-items: center;
+}
+
+.did > h2 {
+    font-size: 2.2rem;
+}
+
+.but-img {
+    display: flex;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+.but-img > img {
+    height: 28px;
+    margin-top: auto;
+    margin-left: auto;
+    border-radius: 50%;
+    width: 28px;
+}
+
+.but-img > h2 {
+    font-size: .8rem;
+    margin-right: 4px;
+    margin-left: 4px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 7%;
+}
+}

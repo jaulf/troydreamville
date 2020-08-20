@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="../css/index.css" >
+    <link rel='stylesheet' href='http://localhost:5000/css/ind_dashboard.css'>
+    <title>Document</title>
+</head>
+<body>
+    
+<header>
+
+    <div id='nav1' class='nav'>
+
+        <div class='nav-one'>
+            <a href='http://localhost:5000/html/home.html'>Troydreamville</a>
+        </div>
+
+        <div class='nav-two'>
+            <a href='index.html'>Home</a>
+            <a href='trade.html'>Trade</a>
+            <a href='transactions.html'>Transactions</a>
+        </div>
+
+        <div class='contain-nav-right'>
+
+            <div class='nav-three'>
+                <div><a href='#'>Buy</a></div>
+                <div><a href='#'>Sell</a></div>
+            </div>
+
+            <div class='nav-four'>
+                <div class='round-img'><img src="../image/notif.svg" alt=""></div>
+                <div><img onclick="showme()" src="../image/avatar.jfif" alt=""></div>
+                <div id='drop'>
+                        <div><a href='profile.html'>My profile</a></div>
+                        <div><a>Logout</a></div>
+                    </div>
+            </div>
+    
+        </div>
+
+    </div>
+
+    <div id='nav2' class='mobile-nav'>
+        <div class='mnav1'>
+            <div class='start'><a href="#">Troydreamville</a></div>
+            <div class='end'><a href='javascript:void(0)' onclick="openNav()">&#9776;</a></div>
+        </div>
+    </div>
+
+    <!-- Mobile Side Nav -->
+    <div id="myNav" class="overlay"> 
+        <a style='color:white;text-decoration: none;' href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
+        
+        <nav class="overlay-nav"> 
+            <div class="side-nav">
+                <div><a onclick="closeNav()" href="#">Home</a></div>
+                <div><a onclick="closeNav()" href="#">Trade</a></div>
+                <div><a onclick="closeNav()" href="#">Transaction</a></div>
+                <div><a onclick="closeNav()" href="#">Notification</a></div>
+                <div><a onclick="closeNav()" href="#">My Profile</a></div>
+                <div><a onclick="closeNav()" href="#">Sign Out</a></div>
+            </div>
+        </nav>
+    
+    </div>
+
+</header>
+
+<section>
+
+    <div class="cont">
+
+        <div class='profile-links'>
+            <a class='active startt' href='#'>Main Profile</a>
+            <a href='profile_trade.html'>Trade Info</a>
+        </div>
+
+        <div class="cont-fcover">
+            <div class='cont-form'>
+
+                <div class='form-head'>
+                    <h2>Main Profile</h2>
+                </div>
+
+                <form class='form-card-cover'>
+                    <div class='form-card'>
+
+                        <label>Full Name</label>
+                        <input type='text' value="Howard Otuya" >
+
+                    </div>
+                    <div class='form-card'>
+
+                        <label>Email Address</label>
+                        <input disabled type='email' value="howardotuya@gmail.com" >
+
+                    </div>
+                    <div class='form-card'>
+
+                        <label>Phone Number</label>
+                        <input type='text' value="+2349056897571" >
+
+                    </div>
+                    <div class='form-card'>
+
+                        <label>Password</label>
+                        <input disabled type='text' value="***********" >
+
+                    </div>
+                    <div class='but-save'>
+                        <button>Update</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+
+<script>
+    function showme() {
+    document.getElementById("drop").classList.toggle("show");
+    }
+
+
+    function closeNav() {
+    document.getElementById("myNav").style.display = "none";
+    } 
+
+
+    function openNav() {
+    if (document.getElementById('myNav').style.display === 'block') {
+        document.getElementById('myNav').style.display = 'none';
+    } else {
+        document.getElementById('myNav').style.display = 'block';
+    }
+    }
+
+
+</script>
+
+</html>
