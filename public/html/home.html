@@ -23,7 +23,12 @@
 
         <div class="log-two">
             <a href='./about-company.html'>About</a>
-            <a href='./services-company.html'>Services</a>
+            <a onmouseover="showme()" href='./services-company.html'>Services</a>
+            <div id='drop'>
+                <div><a href='#'>Real Estate Management</a></div>
+                <div><a href='#'>Logistics</a></div>
+                <div><a href='#'>Online Cryptocurrency Trading</a></div>
+            </div>
             <a href="./contact-company.html">Contact</a>
         </div>
     </div>
@@ -235,6 +240,10 @@
     function closeNav() {
     document.getElementById("myNav").style.display = "none";
     } 
+
+    function showme() {
+    document.getElementById("drop").classList.toggle("show");
+    }
 
 
     function openNav() {

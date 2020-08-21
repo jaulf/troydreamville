@@ -59,7 +59,4 @@ app.listen(PORT, () => {console.log(`Server is running on localhost: ${PORT}...`
 /* ROUTES */
 
 //static files
-app.use(express.static('public_redo'))
-app.use('/before', express.static('public'))
-
-app.use('/dash', express.static('dashboard_template'))
+app.use(express.static('public'));
