@@ -121,13 +121,13 @@ app.post('/logistics_apply.html', upload.single('fafa'), function (req, res) {
     }
   });
   var mailOptions = {
-    from: 'Company Email',
+    from: '"Company Email" <info@troydreamville.com>',
     to: 'info@troydreamville.com',
-    subject: 'Application for driver position',
+    subject: 'Application for a driver position',
     // Subject line
     text: "Someone just applied for a driver position",
     // plain text body
-    html: "<h3> New Application from ".concat(lname, " ").concat(fname, "</h3> <br> <p>Email : ").concat(email, "</p> <br> <p>Phone number: ").concat(phone, "</p> <br> <p>CV is located at www.troydreamville.com/").concat(req.file.path, "</p><br> <p>Message : ").concat(oinfo, "</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>")
+    html: "<h3> New Application from ".concat(lname, " ").concat(fname, "</h3> <br> <p>Email : ").concat(email, "</p> <br> <p>Phone number: ").concat(phone, "</p> <br> <p>File name: ").concat(req.file.path, "</p><br> <p>CV is located <a href='www.troydreamville.com/").concat(req.file.path, ">here</a> </p><br> <p>Message : ").concat(oinfo, "</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>")
   };
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
