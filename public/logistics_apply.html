@@ -12,10 +12,10 @@
 <body>
 
 <div class='header-log-portfolio'>
-
+ 
     <!-- main nav  -->
     <div id='nav-first' class='nav-first'>
-        <div class='log-one'><a href='./home.html'>Troydreamville | </a><span><a href='./logistics.html'>Logistics</a></span></div>
+        <div class='log-one'><a href='./'>Troydreamville | </a><span><a href='./logistics.html'>Logistics</a></span></div>
 
         <div class="log-two">
             <a href='./logistics_apply.html'>Apply</a>
@@ -38,9 +38,9 @@
         
         <nav class="overlay-nav"> 
             <div class="side-nav">
-                <div><a href="./home.html">Back to home</a></div>
-                <div><a  href="./logistics_apply.html">Apply</a></div>
-                <div><a  href="./contact-company.html">Contact Us</a></div>
+                <div><a onclick="closeNav()" href="./">Back to home</a></div>
+                <div><a onclick="closeNav()" href="./logistics_apply.html">Apply</a></div>
+                <div><a onclick="closeNav()" href="./contact-company.html">Contact Us</a></div>
             </div>
         </nav>
 
@@ -52,13 +52,14 @@
         </div>
     </div>
 
-    <div class='next'>
-        <div class='p'><a href='./home.html'>Home</a></div>
+    
+</div>
+<div class='next'>
+        <div class='p'><a href='./'>Home</a></div>
         <div><i class="fas fa-chevron-right"></i></div>
         <div><a href='./logistics.html'>Logistics</a></div>
         <div><i class="fas fa-chevron-right"></i></div>
         <div><a href='./logistics_apply.html'>Apply</a></div>
-    </div>
 </div>
 
 <div class='cont-cover'>
@@ -80,7 +81,7 @@
 
                 <input required type="email" id='email' name='email' placeholder="Email * ">
                 <input required type="tel" id='number' name='number' placeholder="Number * ">
-
+ 
             </div>
 
             <div class='cv'>
@@ -92,9 +93,7 @@
                 <textarea id='oinfo' name='oinfo' placeholder="Extra things you might want to add for us to know more about you."></textarea>
             </div>
 
-            <div class='sds'>
-                <button>Submit Application</button>
-            </div>
+            <div class='tto-b'><button> Submit Application <i class="fas fa-paper-plane"></i></button></div>
 
         </form>
 
@@ -102,7 +101,7 @@
 
 <div class='lmk'>
 <p>Note: Our Job Application is for those who are willing to acquire our cars based on contract for logistics services.</p>
-<p>For Enquires. Please contact our team, call <span> +2348142210583, +2347035651765</span> or email <span>info@troydreamvile.com</span></p>
+<p>For Enquires. Please <a href='./logistics.html#contact-us'>contact</a> our team, call <span> +2347035651765</span> or email <span>info@troydreamvile.com</span></p>
 </div>
 
 </body>

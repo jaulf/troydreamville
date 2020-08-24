@@ -1,623 +1,231 @@
 
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800');
+ 
 * {
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css?family=inter');
- 
 html {
     height:100%;
 } 
 
 body { 
-    font-family : 'inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    font-family : 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
     margin:0; 
     height: 100%;
     background-color: white;
+    color : #323a45;
 }
 
-.header-for-crypt {
-    overflow: hidden;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(255, 227, 172 , 1);
-    background-blend-mode: multiply;
-    color : #2c2c2c;
-    border : 0;
-    margin: 0;
+.quest {
+  padding: 5% 10%;
+  margin: 0 auto;
 }
 
-.nav-for-crypt {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-    justify-content: center;
-    align-items: center;
+.quest-one {
+  margin-bottom: 4rem;
 }
 
-.nav-for-crypt > div {
-    opacity: .95;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: 400;
+.quest-one > h1 {
+  font-size : 30px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.quest-one > p {
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.quest-two {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.two-two {
+  width: 25%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.two-one {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  padding-right: 2rem;
+}
+
+.two-one > div:nth-of-type(1) > h1 {
+  font-weight: 500;
+  font-size: 27px;
+}
+.to-a {
+  display: flex;
+  padding: .5rem 0;
+}
+.to-a > input {
+  display: block;
+  opacity: .9;
+  width: 100%;
+  height: calc(2em + 1.2rem + 2px);
+  padding: .375rem .75rem;
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 1.6;
+  background:rgb(255, 255, 255);
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid #e1e1e1;
+  border-radius: .3rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.to-aa {
+  display: flex;
+  padding: .5rem 0;
 }
 
-
-.nav-for-crypt > div > a {
-    color : #1c1c1c;
-    text-decoration: none;
-}
-
-.nav-for-crypt > div:first-of-type {
-    opacity: 1;
-    font-size: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.nav-for-crypt > div:last-of-type {
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    font-size: 1.1rem;
-}
-
-.nav-for-crypt > div:last-of-type > div:first-of-type {
-    margin-right: 1rem;
-}
-
-.about-for-crypt {
-    overflow: hidden;
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    animation-name: example;
-    animation-duration: 1.2s;
-}
-
-@keyframes example {
-  0% {margin-top: 50%;opacity: 0;}
-  100% {margin-top: 0;opacity: 1;}
-}
-
-.about-for-crypt > div:first-of-type {
-    font-size: min(2em + 1vw, 2.5rem);
-    font-weight: 700;
-    color: #222;
-    line-height: 1.4;
-}
-
-.about-for-crypt > div:nth-of-type(2) {
-    font-size: 1.3rem;
-    font-weight: 600;
-    opacity: .75;
-    line-height: 1.58;
-}
-.bad {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bad > a {
-    font-size: 1.25rem;
-    font-weight: 600;
-    padding: 12px 28px;
-    border: 1px solid #fff;
-    background-color: #fff;
-    text-decoration: none;
-    color : #2c2c2c;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-}
-
-
-.jik-cont {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4%;
-}
-
-.jik-cont > div {
-    padding: 1.5rem 1rem;
-    border-radius: 8px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 8%;
-    height: 160px;
-    width: 250px;
-    color: rgb(28, 28, 36);
-    border-radius: 1px solid rgba(0,0,0,0.2);
-    box-shadow: 3px 5px 10px rgba(0,0,0, .2);
-}
-
-.jik-cont > div > img { 
-    width: 60px;
-    height: 60px;
-}
-
-.jik-cont > div:first-of-type {
-    margin-left: 0;
-}
-
-.jik-cont > div > h1 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0;
-    opacity: .9;
-}
-
-.jik-cont > div > p {
-    font-size: 1.1rem;
-    margin-top: auto;
-    font-weight: 600;
-    margin-bottom: 0;
-    opacity: .8;
-}
-
-.part-1 {
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-.trade-cover {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    width: 70%;
-    margin: 64px auto;
-}
-
-.trade-card {
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 227, 172, .7);
-    background-color: rgba(255, 227, 172, .7);
-    max-width: 370px;
-    width: 100%;
-    height: auto;
-}
-
-
-.trade-card:nth-of-type(1) {
-    margin-right: auto;
-}
-.trade-card:nth-of-type(2) {
-    margin-left: auto;
-}
-.trade-card:nth-of-type(3) {
-    margin-right: auto;
-}
-.trade-card:nth-of-type(4) {
-    margin-left: auto;
-}
-
-.trade-card > h1 {
-    opacity: 0.9;
-    color: #222;
-    line-height: 1.2;
-}
-
-.trade-card > p {
-    opacity: .75;
-    font-weight: 600;
-    text-align: left;
-}
-
-.trade-head {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: .8rem;
-}
-
-.trade-head > h1 {
-    margin-bottom: 0;
-    font-size: 2.2rem;
-    font-weight: 600;
-    opacity: .9;
-}
-
-.trade-head > p {
-    opacity: .8;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.trade-cover2 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 60%;
-    margin: 64px auto;
-    height: 100%;
-}
-
-.trade-card2 {
-    border-radius: 10px;
-    padding: 1.5rem;
-    border: 1px solid 1px solid white;
-    background-color: white;
-    width: 45%;
-    margin: 64px auto 16px;
-    height: auto;
-}
-
-.trade-card2 > h1 {
-    opacity: .95;
-    color: #222;
-    line-height: 1.2;
-}
-
-.trade-card2 > p {
-    opacity: .75;
-    font-weight: 600;
-    text-align: left;
-}
-
-.button-sdm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.button-sdm > a {
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding: 12px 28px;
-    border: 1px solid white;
-    background-color: white;
-    color : #2c2c2c;
-    border-radius: 8px;
-}
-
-.buttom {
-    display: flex;
-    padding: 3rem 1.5rem 0rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.parting {
-    padding-top: 9%;
-    background-color: rgba(255, 227, 172);
-    padding-bottom: 9%;
-}
-
-.footer {
-    opacity: .95;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    padding-top: 64px;
-    padding-bottom: 64px;
-}
-
-.middle {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding-left: 10%;
-}
-
-.middle > div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.middle > div > img {
-    width: 27px;
-    height: 27px;
-    margin-right: 1rem;
-}
-
-.kspan {
-    font-size: 1.4rem;
-    font-weight: 600;
-    opacity: .75;
-}
-
-.middle > div > h1 {
-    font-size: 1.45rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-}
-
-.middle > div > p {
-    font-weight: 600;
-    opacity: .65;
-}
-
-.right-middle {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-}
-
-.real-middle {
-    display: flex;
-    width: 49%;
-    flex-direction: column;
-}
-
-.real-middle > h1 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-}
-
-.real-middle > p {
-    font-weight: 600;
-    opacity: .65;
-    margin: 0;
-    line-height: 2.5;
-}
-
-.real-right {
-    width: 49%;
-}
-
-.real-right > p {
-    font-weight: 600;
-    opacity: .65;
-    margin: 0;
-    line-height: 2.5;
-}
-
-.real-right > h1 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-}
-
-.fter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
-.fter > p {
-    opacity: .65;
-    font-weight: 600;
-    line-height: 2.5;
-    margin: 0;
-}
-
-#nav-for-crypt2 {
-    display: none!important;
-}
-
-@media (max-width: 3000px) and (min-width: 780px) {
-    .overlay {
-        display: none!important;
-    }
-}
-
-@media only screen and (max-width: 780px) {
-
-.fter {
-    text-align: center;
-}
-
-.fter > p {
-    line-height: 1.8;
-    margin: 0;
-}
-
-.about-for-crypt {
-    height: 100%;
-    padding: .5rem;
-}
-
-.about-for-crypt > div:first-of-type {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #222;
-    line-height: 1.2;
-    margin-bottom: 1.2rem;
-}
-
-.about-for-crypt > div:nth-of-type(2) {
-    font-size: 1.3rem;
-    font-weight: 600;
-    opacity: .75;
-    line-height: 1.58;
+.to-aa > input {
+  display: block;
+  width: 50%;
+  opacity: .9;
+  height: calc(2em + 1.2rem + 2px);
+  padding: .375rem .75rem;
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 1.6;
+  background:rgb(255, 255, 255);
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid #e1e1e1;
+  border-radius: .3rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-#myNav {
-    display: none;
+.to-aa > input:first-of-type {
+  margin-right: .5rem;
 }
 
-.millk {
-    float:right;
-    height: 100%;
-    width:auto;
-    display: block;
-    margin-top: 7px;
-    padding-right:7px;
+.to-b {
+  display: flex;
+  padding: .5rem 0;
 }
 
-.millk:hover {
-    color: #fd9800;
+.to-b > textarea {
+  display: block;
+  width: 100%;
+  opacity: .9;
+  height: 15rem;
+  padding: .375rem .75rem;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  background:rgb(255, 255, 255);
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid #e1e1e1;
+  border-radius: .3rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-#myNav {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    overflow-y: auto;
-    transition: 0.5s;
+.to-a > input:focus , .to-aa > input:focus , .to-b > textarea:focus {
+  outline: none;
+  opacity: 1;
+  background:rgb(255, 255, 255);
+  background-color: white;
 }
 
-.overlay-nav {
-    position: relative;
-    top: 15%;
-    width: 100%; 
-    text-align: center;
-    margin-top: 5%;
+.tto-b > button {
+  outline: none;
+  background-color : #fd7e14;
+  color: white;
+  border: medium none;
+  box-shadow: inherit;
+  color: #ffffff;
+  font-family: 'Poppins';
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 20px;
+  padding: 10px 35px;
+  text-transform: uppercase;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  line-height: 1.8;
+  font-size: 14px;
 }
-  
-.side-nav > div {
-    padding: 6%;
-    text-decoration: none;
-    font-size: 1.15rem;
-    color: #f8f8f8;
-    display: block;
-    transition: 0.7s;
-  }
-  
 
-.side-nav > div:hover, .side-nav > div:focus {
-    color: #ff9800;
+.tto-b > button > i {
+  padding-left: 4px;
 }
 
-.side-nav > div a {
-    text-decoration: none;
-    color: white;
+.two-two > div > h3 {
+  font-weight: 600;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
-#myNav .closebtn {
-    position: absolute;
-    top: 5px;
-    right: 45px;
-    margin: 0;
-    font-size: 50px;
+.two-two > div > p {
+  padding:0;
+  margin: 0;
+  line-height: 1.8;
 }
 
-.closebtn:hover {
-    color: #ff9800;
-}
-
-
-#nav-for-crypt1 {
-    display: none!important;
-}
-
-#nav-for-crypt2 {
-    display: flex!important;
-}
-
-.nav-for-crypt {
-    padding-left: .5rem;
-    padding-right: 0rem;
-}
+@media only screen and (max-width: 780px) {  
 
-.nav-for-crypt > div:last-of-type > div:first-of-type > a{
-    margin-right: 0;
-    text-decoration: none;
-    color : #2c2c2c;
-    font-size: 1.4rem;
+.quest {
+  padding: 10%;
 }
-
-.part-1 {
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-.jik-cont {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4%;
-}
-
-.jik-cont > div {
-    margin-left: 8%;
-    margin-bottom: 8%;
-}
-
-.jik-cont > div:first-of-type {
-    margin-left: 8%;
-}
-
 
-.trade-cover {
-    width: 90%;
-    justify-content: center;
+.quest-one {
+  margin-bottom: 2rem;
 }
 
-.trade-cover2 {
-    flex-direction: column;
-    width: 90%;
+.quest-one > h1 {
+  font-size: 26px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
-.trade-card2 {
-    border-radius: 10px;
-    padding: 1.5rem;
-    border: 1px solid 1px solid white;
-    background-color: white;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 1.5rem!important;
-    height: auto;
+.quest-two {
+  flex-direction: column;
 }
 
-.trade-head > h1 {
-    font-size: 1.75rem;
+.to-aa {
+  flex-direction: column;
 }
 
-.footer {
-    opacity: .95;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    padding-top: 64px;
-    padding-bottom: 64px;
+.to-aa > input {
+  width : 100%;
 }
 
-.middle {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-left: 10%;
+.to-aa > input:first-of-type {
+  margin-right: 0;
+  margin-bottom: 1rem;
 }
 
-.right-middle {
-    width: 100%;
-    padding-top: 10%;
-    padding-left: 10%;
+.two-one {
+  width: 100%;
+  padding-right: 0;
+  padding-bottom: 4rem;
 }
 
-.real-middle {
-    display: flex;
-    width: 49%;
-    flex-direction: column;
+.two-two {
+  width: 100%;
 }
 
-.real-right {
-    width: 49%;
+.two-two > div {
+  padding-bottom: 2rem;
 }
 
 }

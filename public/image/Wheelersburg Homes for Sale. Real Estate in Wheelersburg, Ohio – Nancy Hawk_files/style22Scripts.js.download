@@ -1,0 +1,69 @@
+
+
+function openNav() {
+  document.getElementById("plusBtn").style.display = "none";
+  document.getElementById("minusBtn").style.display = "block";
+  document.getElementById("navBox").style.maxHeight = "9000px";
+  document.getElementById("navBox").style.opacity = "1";
+  document.getElementById("navBox").style.overflow = "visible";
+}
+
+function closeNav() {
+  document.getElementById("plusBtn").style.display = "block";
+  document.getElementById("minusBtn").style.display = "none";
+  document.getElementById("navBox").style.opacity = "0";
+  document.getElementById("navBox").style.maxHeight = "0px";
+  document.getElementById("navBox").style.overflow = "hidden";
+}
+
+function openCInfo() {
+  $("#cInfo").css("width","45vmin");
+  $("#cInfo").css("padding-left","5vmin");
+  $("#cInfo").css("opacity","1");
+}
+
+function closeCInfo() {
+  $("#cInfo").css("width","0");
+  $("#cInfo").css("padding-left","0");
+  $("#cInfo").css("opacity","0");
+}
+
+function autoScroll()
+{
+  var url = window.location.href;
+  if(url.indexOf("&this_format=") <= 0)
+  {
+    $('html,body').animate({scrollTop: $("#mainContent").offset().top}, 500, 'easeOutExpo' );
+  }
+  else
+  {
+    document.location.href="#mainContent";
+  }
+}
+
+window.onload = function()
+{
+  var url = window.location.href;
+  if($('#mainContent').zIndex() == 1000)
+  {
+    if(url.indexOf("=default&") <= 0 && url.indexOf("default.asp?") >= 0)
+    {
+      autoScroll();
+    }
+  }
+  else if ($('#mainContent').zIndex() == 1001)
+  {
+    autoScroll();
+  }
+  else if($('#mainContent').zIndex() == 1002)
+  {
+    if(url.indexOf("=default&") <= 0 && url.indexOf("default.asp?") >= 0)
+    {
+      autoScroll();
+    }
+    else
+    {
+      window.setTimeout( autoScroll, 2000 );
+    }
+  }
+};

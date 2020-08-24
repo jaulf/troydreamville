@@ -5,16 +5,25 @@
         <meta charset="UTF-8">
         <link rel='icon' href='TDVIcon.jfif' >
         <link rel='stylesheet' href='../css/log.css'>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://kit.fontawesome.com/d3cfd5df57.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-<body>
+<body> 
 
-<div class='header-for-logistics'>
+<script>
+  AOS.init({
+  duration: 1300,
+  once: true});
+</script>
+
+
+<div style="overflow: hidden;" class='header-for-logistics'>
 <!-- main nav  -->
 <div id='nav-first' class='nav-first'>
-    <div class='log-one'><a href='./home.html'>Troydreamville | </a><span><a href='./logistics.html'>Logistics</a></span></div>
+    <div class='log-one'><a href='./'>Troydreamville | </a><span><a href='./logistics.html'>Logistics</a></span></div>
 
     <div class="log-two">
         <a href='./logistics_apply.html'>Apply</a>
@@ -29,7 +38,7 @@
     <div><a href="./logistics.html">Logistics</a></div>
     <div><a href='javascript:void(0)' onclick="openNav()">&#9776;</a></div>
     
-</div>
+</div> 
 
 <!-- Mobile Side Nav -->
 <div id="myNav" class="overlay" style="display:none;"> 
@@ -37,9 +46,9 @@
     
     <nav class="overlay-nav"> 
         <div class="side-nav">
-            <div><a href="./home.html">Back to home</a></div>
-            <div><a  href="./logistics_apply.html">Apply</a></div>
-            <div><a  href="./contact-company.html">Contact Us</a></div>
+            <div><a onclick="closeNav()" href="./">Back to home</a></div>
+            <div><a onclick="closeNav()" href="./logistics_apply.html">Apply</a></div>
+            <div><a onclick="closeNav()" href="./contact-company.html">Contact Us</a></div>
         </div>
     </nav>
 
@@ -55,7 +64,7 @@
 
 </div>
 
-<section class='story-cov'>
+<section style="overflow: hidden;" class='story-cov'>
 
     <div id='story' class='story'>
 
@@ -77,7 +86,7 @@
 
 </section>
 
-<section class='log-ser-cont'>
+<section style="overflow: hidden;" class='log-ser-cont'>
 
     <div class='log-ser-head'>
         <p>Transportation solution to all your different needs.</p>
@@ -108,7 +117,7 @@
 
 </section>
 
-<section class='log-ser-cont2'>
+<section style="overflow: hidden;" class='log-ser-cont2'>
 
     <div class='log-ser-head2'>
         <h1>What our customers are saying</h1>
@@ -152,7 +161,61 @@
     </div>
 </section>
 
-<section class='hire'>
+<!-- Section for the contact -->
+<section style="overflow: hidden;" class='quest'>
+
+    <div class='quest-one'>
+        <h1>Contact Us</h1>
+        <p>Do you have any questions ?</p>
+    </div>
+ 
+    
+        <form method="POST">
+    <div class='quest-two'>
+        <div class='two-one'>
+            <div><h1>Leave a mesage</h1></div>
+            <div class='to-a'><input required name='name' type='text' id='name' placeholder="Name * " ></div>
+            <div class='to-aa'>
+                <input required name="email" type='text' id='email' placeholder=" Email * " >
+                <input type='tel' name="phone" id='Phone' placeholder="Phone" >
+            </div>
+            <div class='to-b'><textarea required name='message' id='message' placeholder="Tell Us Anything *" ></textarea></div>
+            <div class='tto-b'><button> Send message <i class="fas fa-paper-plane"></i></button></div>
+        </div>
+        <div class=two-two>
+
+            <div>
+                <h3>Office location</h3>
+                <p>Owel-linkso group, Orchid road, Lekki. </p>
+            </div>
+
+            
+            <div>
+                <h3>Personnel</h3>
+                <p>Otuya Emmanuel</p>
+                <p>Fleet Manager</p>
+            </div>
+
+            <div>
+                <h3>Phone</h3>
+                <p>+2349056897571</p>
+            </div>
+
+            <div>
+                <h3>Email</h3>
+                <p>info@troydreamville.com</p>
+                <p>example.com</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class='opa'>
+        <p>Note: Once your message is sent you'll be redirected to the homepage.</p>
+    </div>
+</form>
+</section>
+
+<section style="overflow: hidden;" data-aos="slide-up" class='hire'>
 
     <div>
         <h1>We're Hiring</h1>
@@ -161,38 +224,38 @@
 
 </section>
 
-<footer>
+<footer style="overflow: hidden;">
     <div class='footer'>
     
-        <div class='middle'>
+        <div data-aos="fade-left" class='middle'>
     
             <div>
                 <h1>Troydreamville<span class='kspan'>.com</span></h1>
             </div>
     
             <div>
-                <img src="../../image/Facebook_logo_36x36.svg.png" alt='Facebook' >
+                <img src="./image/Facebook_logo_36x36.svg.png" alt='Facebook' >
                 <p><a href='#'>Facebook</a></p>
             </div>
     
             <div>
-                <img src="../../image/twitter-color.svg" alt='Twitter' >
+                <img src="./image/twitter-color.svg" alt='Twitter' >
                 <p><a href='#'>Twitter</a></p>
             </div>
     
             <div>
-                <img src="../../image/instagram-full-color.svg" alt='Instagram' >
+                <img src="./image/instagram-full-color.svg" alt='Instagram' >
                 <p><a href='#'>Instagram</a></p>
             </div>
     
             <div>
-                <img src="../../image/256px-Linkedin_icon.svg.png" alt='LinkedIn' >
+                <img src="./image/256px-Linkedin_icon.svg.png" alt='LinkedIn' >
                 <p><a href='#'>LinkedIn</a></p>
             </div>
     
         </div>
     
-        <div class=right-middle>
+        <div data-aos="zoom-in" class=right-middle>
             <div class='real-middle'>
                 <h1><a href='./about-company.html'>About Us</a></h1>
                 <p><a href='./contact-company.html'>Company</a></p>
@@ -200,31 +263,34 @@
             </div>
         
             <div class='real-right'>
-                <h1><a href='#'>Services</a></h1>
-                <p><a href='#'>Cryptocurrency</a></p>
-                <p><a href='#'>Logistics</a></p>
-                <p><a href='#'>Real Estate Management</a></p>
+                <h1><a href='./services-company.html'>Services</a></h1>
+                <p><a href='./coming-soon.html'>Cryptocurrency</a></p>
+                <p><a href='./logistics.html'>Logistics</a></p>
+                <p><a href='./real_estate_management.html'>Real Estate Management</a></p>
             </div>
         </div>
 
     </div>
     
+    
         <div style="width: 100%;height: 1px;background-color: rgb(218, 225, 233);"></div>
     
     <div class='fter'>
-        <p>&copy2020 | TroyDreamville Limited. All rights reserved</p>
+        <p>&copy2020 | Troydreamville Limited. All rights reserved</p>
         <p>Powered by Jaulf LLC</a></p>
     </div>
     
 </footer>
 
-</body>
-</html>
- 
+
 <script>
     function closeNav() {
     document.getElementById("myNav").style.display = "none";
     } 
+
+    function showme() {
+    document.getElementById("drop").classList.toggle("show");
+    }
 
 
     function openNav() {
@@ -233,6 +299,10 @@
     } else {
         document.getElementById('myNav').style.display = 'block';
     }
-    }
+    } 
 
 </script>
+
+</body>
+
+</html>
