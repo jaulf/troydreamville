@@ -97,7 +97,9 @@ app.post('/contact-company.html', function (req, res) {
     }
   });
 });
-app.post('/logistics_apply.html', upload.single('fafa'), function (req, res, next) {});
+app.post('/logistics_apply.html', upload.single('fafa'), function (req, res, next) {
+  res.redirect('/');
+});
 app.post('/logistics.html', function (req, res) {
   var _req$body2 = req.body,
       name = _req$body2.name,

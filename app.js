@@ -97,6 +97,8 @@ transporter.sendMail(mailOptions, function(error, info){
 
 app.post('/logistics_apply.html', upload.single('fafa'), (req, res, next) => {
  
+  res.redirect('/')
+
 })
 
 
