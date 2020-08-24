@@ -129,7 +129,7 @@ app.post('/logistics_apply.html', upload.single('fafa') ,  function(req, res) {
     to: 'info@troydreamville.com',
     subject: 'Application for a driver position' , // Subject line
     text: "Someone just applied for a driver position", // plain text body
-    html: `<h3> New Application from ${lname} ${fname}</h3> <br> <p>Email : ${email}</p> <br> <p>Phone number: ${phone}</p> <br> <p>File name: ${req.file.path}</p><br> <p>CV is located <a href='www.troydreamville.com/${req.file.path}>here</a> </p><br> <p>Message : ${oinfo}</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>`, 
+    html: `<h3> New Application from ${lname} ${fname}</h3> <br> <p>Email : ${email}</p> <br> <p>Phone number: ${phone}</p> <br> <p>File path: ${req.file.path}</p><br> <p>CV is located <a href='www.troydreamville.com/${req.file.path}'>here</a></p><br> <p>Message : ${oinfo}</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>`, 
   };
 
   transporter.sendMail(mailOptions, function(error, info){
