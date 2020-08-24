@@ -68,32 +68,37 @@
             <h1>Fill the following to apply now</h1>
         </div>
 
-        <form class='cont-form' method="POST">
+        <form class='cont-form'  method="post" enctype="multipart/form-data">
 
             <div>
                 
-                <input required type="text" id='fname' name='fname' placeholder="First Name * " >
-                <input required type="text" id='lname' name='lname' placeholder='Last Name * ' >
+                <input required type="text" name='fname' placeholder="First Name * " >
+                <input required type="text" name='lname' placeholder='Last Name * ' >
 
             </div>
 
             <div>
 
-                <input required type="email" id='email' name='email' placeholder="Email * ">
-                <input required type="tel" id='number' name='number' placeholder="Number * ">
+                <input required type="email" name='email' placeholder="Email * ">
+                <input required type="tel" name='number' placeholder="Number * ">
  
             </div>
 
             <div class='cv'>
                 <label>Submit your CV *</label>
-                <span><input required type="file" id='file'></span>
+                <span><input required type="file" id='fafa' name='fafa' /></span>
             </div>
 
             <div>
-                <textarea id='oinfo' name='oinfo' placeholder="Extra things you might want to add for us to know more about you."></textarea>
+                <textarea name='oinfo' placeholder="Extra things you might want to add for us to know more about you."></textarea>
             </div>
 
             <div class='tto-b'><button> Submit Application <i class="fas fa-paper-plane"></i></button></div>
+
+                
+            <span class='opa'>
+                <p style='padding: 0 1rem;'>Note: Once your application is sent you'll be redirected to the homepage.</p>
+            </span>
 
         </form>
 

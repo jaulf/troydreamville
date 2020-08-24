@@ -11,15 +11,9 @@ var formidable = require('formidable');
 
 var fs = require('fs');
 
-var morgan = require('morgan');
+var Busboy = require('busboy');
 
-var cors = require('cors');
-
-var multer = require('multer');
-
-var upload = multer({
-  dest: 'uploads/'
-}); // const expressLayouts = require('express-ejs-layouts');
+var inspect = require('util').inspect; // const expressLayouts = require('express-ejs-layouts');
 // const mongoose = require('mongoose');
 // const db = require('./config/database').database;
 // let ejs = require('ejs');
@@ -32,8 +26,9 @@ var upload = multer({
 // app.set('view engine', 'ejs');
 //Body parser
 
+
 app.use(express.urlencoded({
-  extended: true
+  extended: false
 })); // // Express session
 // app.use(
 //   session({
@@ -97,7 +92,6 @@ app.post('/contact-company.html', function (req, res) {
     }
   });
 });
-app.post('/logistics_apply.html', upload.single('fafa'), function (req, res, next) {});
 app.post('/logistics.html', function (req, res) {
   var _req$body2 = req.body,
       name = _req$body2.name,
@@ -132,3 +126,35 @@ app.post('/logistics.html', function (req, res) {
 //static files
 
 app.use(express["static"]('public'));
+app.post('/logistics_apply.html', function (req, res) {
+  var busboy = new Busboy({
+    headers: req.headers
+  });
+  var file = req.body.file;
+  busboy.on('field', function (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) {
+    var transporter = nodemailer.createTransport({
+      service: '"Outlook365"',
+      auth: {
+        user: "info@troydreamville.com",
+        pass: "Troyscott"
+      }
+    });
+    var mailOptions = {
+      from: 'Company Email',
+      to: 'info@troydreamville.com',
+      subject: 'Application for driver position',
+      // Subject line
+      text: "Someone just applied for a driver position",
+      // plain text body
+      html: "<h3> New Application from ".concat(inspect(val), " ").concat(inspect(val), "</h3> <br> <p>Email : ").concat(inspect(val), "</p> <br> <p>Phone number: ").concat(inspect(val), "</p> <br> <p>CV is located at www.troydreamville.com/uploaded_cvs/").concat(inspect(val), "</p><br> <p>Message : ").concat(inspect(val), "</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>")
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  });
+  req.pipe(busboy);
+});

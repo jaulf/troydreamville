@@ -4,10 +4,8 @@ const PORT = process.env.PORT || 5000;
 const nodemailer = require('nodemailer');
 const formidable = require('formidable');
 const fs = require('fs');
-const morgan = require('morgan');
-const cors = require('cors')
-var multer = require('multer') 
-const upload = multer({dest:'uploads/'})
+const Busboy = require('busboy');
+const inspect = require('util').inspect;
 // const expressLayouts = require('express-ejs-layouts');
 // const mongoose = require('mongoose');
 // const db = require('./config/database').database;
@@ -23,7 +21,7 @@ const upload = multer({dest:'uploads/'})
 // app.set('view engine', 'ejs');
 
 //Body parser
-app.use(express.urlencoded({ extended : true}))
+app.use(express.urlencoded({ extended : false}))
 
 // // Express session
 // app.use(
@@ -36,7 +34,6 @@ app.use(express.urlencoded({ extended : true}))
 
 // //connect-flash
 // app.use(flash())
-
 
 // //MongoDB
 // mongoose.connect(db, { useNewUrlParser : true, useUnifiedTopology : true})
@@ -94,39 +91,34 @@ transporter.sendMail(mailOptions, function(error, info){
 });
 })
 
-
-app.post('/logistics_apply.html', upload.single('fafa'), (req, res, next) => {
- 
-})
-
-
-app.post('/logistics.html',  (req, res) => {
-
-  var { name, email, phone , message } = req.body;
+  app.post('/logistics.html' , (req, res) => {
   
-  var transporter = nodemailer.createTransport({
-    service: '"Outlook365"',
-    auth: {
-      user: "info@troydreamville.com",
-      pass: "Troyscott"
-    }
-  });
-  
-  var mailOptions = {
-    from: 'Company Email',
-    to: 'info@troydreamville.com',
-    subject: 'New message to fleet manager',// Subject line
-    text: "We just got a new message directed to our fleet manager", // plain text body
-    html: `<h3> New Message from ${name}</h3> <br> <p>Email : ${email}</p> <br> <p>Phone number: ${phone}</p> <br> <p>Message : ${message}</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>`, 
-  };
-  
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-        res.redirect('/')
-      console.log('Email sent: ' + info.response);
-    }
+    var { name, email, phone , message } = req.body;
+    
+    var transporter = nodemailer.createTransport({
+      service: '"Outlook365"',
+      auth: {
+        user: "info@troydreamville.com",
+        pass: "Troyscott"
+      }
+    });
+    
+    var mailOptions = {
+      from: 'Company Email',
+      to: 'info@troydreamville.com',
+      subject: 'New message to fleet manager',// Subject line
+      text: "We just got a new message directed to our fleet manager", // plain text body
+      html: `<h3> New Message from ${name}</h3> <br> <p>Email : ${email}</p> <br> <p>Phone number: ${phone}</p> <br> <p>Message : ${message}</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>`, 
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+          res.redirect('/')
+        console.log('Email sent: ' + info.response);
+      }
+
   });
   
   })
@@ -136,4 +128,45 @@ app.post('/logistics.html',  (req, res) => {
 
 //static files
 app.use(express.static('public'));
+
+
+app.post('/logistics_apply.html', (req, res) => {
+
+  
+  var busboy = new Busboy({ headers: req.headers });
+
+  var { file } = req.body;
+
+  busboy.on('field', (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) => {
  
+    var transporter = nodemailer.createTransport({
+      service: '"Outlook365"',
+      auth: {
+        user: "info@troydreamville.com",
+        pass: "Troyscott"
+      }
+    });
+    
+    var mailOptions = {
+      from: 'Company Email',
+      to: 'info@troydreamville.com',
+      subject: 'Application for driver position' , // Subject line
+      text: "Someone just applied for a driver position", // plain text body
+      html: `<h3> New Application from ${inspect(val)} ${inspect(val)}</h3> <br> <p>Email : ${inspect(val)}</p> <br> <p>Phone number: ${inspect(val)}</p> <br> <p>CV is located at www.troydreamville.com/uploaded_cvs/${inspect(val)}</p><br> <p>Message : ${inspect(val)}</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>`, 
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  
+    })
+  
+    req.pipe(busboy)
+  
+  })
+  
