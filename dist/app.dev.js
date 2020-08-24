@@ -11,14 +11,21 @@ var formidable = require('formidable');
 
 var fs = require('fs');
 
-var morgan = require('morgan');
-
-var cors = require('cors');
+var path = require('path');
 
 var multer = require('multer');
 
+var storage = multer.diskStorage({
+  destination: function destination(req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  // By default, multer removes file extensions so let's add them back
+  filename: function filename(req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
 var upload = multer({
-  dest: 'uploads/'
+  storage: storage
 }); // const expressLayouts = require('express-ejs-layouts');
 // const mongoose = require('mongoose');
 // const db = require('./config/database').database;
@@ -33,7 +40,7 @@ var upload = multer({
 //Body parser
 
 app.use(express.urlencoded({
-  extended: true
+  extended: false
 })); // // Express session
 // app.use(
 //   session({
@@ -97,15 +104,46 @@ app.post('/contact-company.html', function (req, res) {
     }
   });
 });
-app.post('/logistics_apply.html', upload.single('fafa'), function (req, res, next) {
-  res.redirect('/');
-});
-app.post('/logistics.html', function (req, res) {
+app.post('/logistics_apply.html', upload.single('fafa'), function (req, res) {
   var _req$body2 = req.body,
-      name = _req$body2.name,
+      fname = _req$body2.fname,
+      lname = _req$body2.lname,
       email = _req$body2.email,
       phone = _req$body2.phone,
-      message = _req$body2.message;
+      oinfo = _req$body2.oinfo;
+  console.log(req.body);
+  console.log(req.file.path);
+  var transporter = nodemailer.createTransport({
+    service: '"Outlook365"',
+    auth: {
+      user: "info@troydreamville.com",
+      pass: "Troyscott"
+    }
+  });
+  var mailOptions = {
+    from: 'Company Email',
+    to: 'info@troydreamville.com',
+    subject: 'Application for driver position',
+    // Subject line
+    text: "Someone just applied for a driver position",
+    // plain text body
+    html: "<h3> New Application from ".concat(lname, " ").concat(fname, "</h3> <br> <p>Email : ").concat(email, "</p> <br> <p>Phone number: ").concat(phone, "</p> <br> <p>CV is located at www.troydreamville.com/").concat(req.file.path, "</p><br> <p>Message : ").concat(oinfo, "</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>")
+  };
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.redirect('/');
+    }
+  });
+});
+app.post('/logistics.html', function (req, res) {
+  var _req$body3 = req.body,
+      name = _req$body3.name,
+      email = _req$body3.email,
+      phone = _req$body3.phone,
+      message = _req$body3.message;
   var transporter = nodemailer.createTransport({
     service: '"Outlook365"',
     auth: {
