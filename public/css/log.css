@@ -1039,6 +1039,9 @@ html {
 
 @media only screen and (max-width: 780px) {
 
+    .loas {
+        display: none;
+    }
 
 .log-ser-head > p:nth-of-type(2) {
     line-height: 1.6;

@@ -1928,6 +1928,10 @@ html {
 
 @media only screen and (max-width: 780px) {
 
+    .loas {
+        display: none;
+    }
+
 .quest {
   padding: 10%;
 }
