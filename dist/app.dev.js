@@ -57,7 +57,7 @@ app.post('/contact-company.html', function (req, res) {
   var _req$body = req.body,
       name = _req$body.name,
       email = _req$body.email,
-      number = _req$body.number,
+      phone = _req$body.phone,
       message = _req$body.message;
   var transporter = nodemailer.createTransport({
     service: '"Outlook365"',
@@ -73,7 +73,7 @@ app.post('/contact-company.html', function (req, res) {
     // Subject line
     text: "We just got a new message",
     // plain text body
-    html: "<h3> New Message from ".concat(name, "</h3> <br> <p>Email : ").concat(email, "</p> <br> <p>Phone number: ").concat(number, "</p> <br> <p>Message : ").concat(message, "</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>")
+    html: "<h3> New Message from ".concat(name, "</h3> <br> <p>Email : ").concat(email, "</p> <br> <p>Phone number: ").concat(phone, "</p> <br> <p>Message : ").concat(message, "</p> <br> <h4 style='font-style:italic;font-weight:400;'>This was sent from our company's microsoft account.</h4>")
   };
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
