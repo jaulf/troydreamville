@@ -1305,7 +1305,7 @@ html {
 .rowz {
     display: flex;
     flex-direction: row;
-    border: 1px solid #ccc;
+    border: 1px solid #e7e7e7;
     border-radius: 12px;
     padding: 1.4rem;
     align-items: center;
@@ -1315,6 +1315,7 @@ html {
     transition: .5s;
     height: 190px;
 }
+
 .rowz:hover {
     transform: translate3d(-4px,-4px,0) rotateZ(-1deg);
     cursor: pointer;
@@ -1915,7 +1916,7 @@ html {
 .pad {
     padding: 96px 10%;
 }
-
+ 
 .opa {
     margin-top: 2rem
 }
@@ -1932,6 +1933,11 @@ html {
         display: none;
     }
 
+
+.opa {
+    font-size: .9rem;
+}
+
 .quest {
   padding: 10%;
 }
@@ -1941,14 +1947,24 @@ html {
 }
 
 .quest-one > h1 {
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.3;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 
+.quest-one > p {
+    
+  font-size: .95rem;
+}
+
 .quest-two {
   flex-direction: column;
+}
+
+.two-one > div:nth-of-type(1) > h1 {
+    font-size: 22px;
+    text-transform: capitalize;
 }
 
 .to-aa {
@@ -1980,19 +1996,13 @@ html {
 
 .log-ser-head2 > h1{
     color: #233143;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 600;
 } 
 
-.quote {
-    flex-direction: column;
-}
-
-.quote > div {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    margin-left: 0;
+.log-ser-head > p {
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .log-ser-cov {
@@ -2002,6 +2012,7 @@ html {
 .log-ser-card, .log-ser-card3 {
     margin-left: 0;
     width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 }
 
 #myNav {
@@ -2046,7 +2057,7 @@ html {
 .side-nav > div {
     padding: 6%;
     text-decoration: none;
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: #f8f8f8;
     display: block;
     transition: 0.7s;
@@ -2067,7 +2078,7 @@ html {
     top: 5px;
     right: 45px;
     margin: 0;
-    font-size: 50px;
+    font-size: 47px;
 }
 
 .closebtn:hover {
@@ -2087,7 +2098,7 @@ html {
 #nav-small > div > a {
     text-decoration: none;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
@@ -2145,10 +2156,49 @@ html {
     text-align: center;
 }
 
+.middle > div > img {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+.kspan {
+    font-weight: 600;
+    opacity: .75;
+}
+
+.middle > div > h1 {
+    font-size: 1.25rem;
+}
+
+.middle > div > p {
+    font-size: .9rem;
+}
+
+
+.real-middle > h1 {
+    font-size: 1.15rem;
+}
+
+.real-middle > p {
+    font-size: .9rem;
+}
+
+.real-right > p {
+    font-size: .9rem;
+}
+
+.real-right > h1 {
+    font-size: 1.15rem;
+}
+
 .fter > p {
+    font-size: .85rem; 
     line-height: 1.8;
     margin: 0;
 }
+
+
 
 .card33 {
     width: 100%;
@@ -2206,7 +2256,7 @@ html {
 
 
 .rowz > div > i {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
 }
 
 .rowz {
@@ -2216,7 +2266,7 @@ html {
 
 .rowz > div:first-of-type{
     margin-right: 0;
-    padding: 1.4rem;
+    padding: 1.25rem;
     margin-left: 0;
 }
 .rowz > div:last-of-type {
@@ -2225,7 +2275,7 @@ html {
 }
 
 .rowz > div:last-of-type > p {
-    font-size: 1rem;
+    font-size: .85rem;
     font-weight: 400;
     line-height: 1.2;
     opacity: .75;
@@ -2234,13 +2284,13 @@ html {
 }
 
 .rowz > div:last-of-type > h1 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 600;
     line-height: 1.2;
 }
 
 .rowz > div:last-of-type > a {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: orange;
@@ -2271,6 +2321,16 @@ html {
 
 .card3 {
     width: 100%;
+}
+
+.card3 > div:last-of-type > h3 {
+    font-size: 1rem;
+    opacity: .85;
+}
+
+.card3 > div:last-of-type > p {
+    font-size: .8rem;
+    opacity: .85;
 }
 
 .contain {
@@ -2342,7 +2402,7 @@ html {
 
 .header-content > :nth-child(1) {
     padding: 14px;
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     text-align: justify;
     font-weight: 500;
     text-align: center;
@@ -2356,11 +2416,6 @@ html {
 /* get started + 4 0 */
 .get-started-container {
     margin: 62px 10%;
-}
-
-.header-content > div {
-    font-size: 1.15rem;
-    font-weight: 400;
 }
 
 .section-for-query {
@@ -2393,20 +2448,86 @@ html {
 }
 
 .as :first-child {
-    font-size: 1.55rem;
+    text-align: center;
+    font-size: 1.35rem;
 }
 
 .as :last-child {
-    font-size: 1.3rem;
-}
-
-.hire > div > :nth-child(1) {
-    font-size: 1.4rem;
-}
-
-.hire > div > :nth-child(2) {
+    text-align: center;
     font-size: 1.1rem;
 }
 
+.hire > div > :nth-child(1) {
+    font-size: 1.15rem;
+}
+
+.hire > div > :nth-child(2) {
+    font-size: .9rem;
+}
+
+.bad > a {
+    font-size: 1.15rem;
+}
+
+.log-ser-card > h1, .log-ser-card3 > h1 {
+    font-size: 20px;
+}
+
+.log-ser-card > p, .log-ser-card3 > p {
+    font-size: .85rem;
+}
+
+.log-ser-card > span > a {
+    font-size: .95rem;
+}
+
+.quote {
+    flex-direction: column;
+}
+
+.quote > div {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    margin-left: 0;
+}
+
+.quote > div:first-of-type {
+    margin-top: 1.5rem;
+}
+
+.quote > div > div:first-of-type > i {
+    font-size: 2.25rem;
+}
+
+.quote > div > div:last-of-type > p:nth-of-type(1) {
+    font-size: 1rem;
+}
+.quote > div > div:last-of-type > p:nth-of-type(2) {
+    
+    font-size: .85rem;
+    
+}
+.quote > div > div:last-of-type > p:nth-of-type(3) {
+    font-size: .85rem;
+}
+
+.about-section-div > div:first-of-type h1 {
+    font-size: 24px;
+    font-weight: 600;
+} 
+
+.about-section-div > div {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #727272;
+    line-height: 1.6;
+}
+
+.sect-for-team > div > h1 {
+    letter-spacing: -.01em;
+    font-size: 24px;
+    font-weight: 600;
+}
 
 } 

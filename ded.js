@@ -159,7 +159,16 @@ app.post('/logistics_apply.html', (req, res) => {
       if (error) {
         console.log(error);
       } else {
-        
+        var form = new formidable.IncomingForm();
+          form.parse(req, function (err, fields, files) {
+            var oldpath = files.file.path;
+            var newpath = './uploaded_cvs' + files.file.name;
+            fs.rename(oldpath, newpath, function (err) {
+              if (err) throw err;
+              console.log('File uploaded and moved!');
+              setTimeout(() => { res.redirect('/') }, 3000 ) 
+            });
+       });
         console.log('Email sent: ' + info.response);
       }
     });
@@ -170,3 +179,4 @@ app.post('/logistics_apply.html', (req, res) => {
   
   })
   
+y
