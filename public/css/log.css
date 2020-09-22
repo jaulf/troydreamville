@@ -28,7 +28,7 @@ html {
     background-size: cover;
     background-blend-mode: multiply;
     color : white;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.55);
     border : 0;
     margin: 0;
 }
@@ -504,7 +504,7 @@ html {
     background-size: cover;
     background-blend-mode: multiply;
     color : white;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.55);
     border : 0;
     margin: 0;
 }
