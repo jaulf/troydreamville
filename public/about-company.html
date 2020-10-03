@@ -21,56 +21,68 @@
         once: true});
     </script>
       
-<header style="overflow: hidden;" class="header-for-about">
+<div class='howl-z'>
 
-    <!-- main nav  -->
-    <div id='nav-first' class='nav-first'>
-        <div class='log-one'><a href='./'>Troydreamville</a></div>
+<!-- main nav  -->
+<div id='nav-first' class='nav-first'>
+    <div class='log-one'><a href='./'>Troydreamville</a></div>
 
-        <div class="log-two">
-            <a href='./about-company.html'>About</a>
-            <a onmouseover="showme()" href='./services-company.html'>Services</a>
-            <div id='drop'>
-                <div><a href='./real_estate_management.html'>Real Estate Management</a></div>
-                <div><a href='./logistics.html'>Logistics</a></div>
-                <div><a href='#'>Online Cryptocurrency Trading</a></div>
-            </div>
-            <a href="./contact-company.html">Contact</a>
+    <div class="log-two">
+        <a href='./about-company.html'>About</a>
+        <a onmouseover="showme()" href='./services-company.html'>Services</a>
+        <div id='drop'>
+            <div><a href='./real_estate_management.html'>Real Estate Management</a></div>
+            <div><a href='./logistics.html'>Logistics</a></div>
+            <div><a href='#'>Online Cryptocurrency Trading</a></div>
+        </div>
+        <a href="./contact-company.html">Contact</a>
+    </div>
+</div> 
+<!-- nav for small screens -->
+<div id='nav-small' class="nav-small">
+    <div><a href="./">Troydreamville</a></div>
+    <div><a href='javascript:void(0)' onclick="openNav()">&#9776;</a></div>
+</div>
+<!-- Mobile Side Nav -->
+<div id="myNav" class="overlay" style="display:none;"> 
+    <a style='color:white;text-decoration: none;' href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
+    <nav class="overlay-nav"> 
+        <div class="side-nav">
+            <div><a href='./about-company.html'>About</a></div>
+            <div><a href='./services-company.html'>Services</a></div>
+            <div><a href="./contact-company.html">Contact</a></div>
+        </div>
+    </nav>
+</div>
+
+<header class='haed-cvo'>
+
+    <div class='ds haed-on'>
+
+        <h1>About Us</h1>
+
+        <p>Who we are and what we do. A little Info about what we're all about, what we do and our team.</p>
+
+        <div>
+            <a href='#wes'> More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+
+    </div>
+
+    <div id="slideshow-example" data-component="slideshow">
+        <div  class='ds haed-tw' role="list">
+            <img class="slide" src="./image/im/pizza-delivery-scooter.png" alt="">
+            <img class='slide' src="./image/Online-city-logistics.png" alt="">
+            <img class="slide" src="./image/im/crypt.png" alt="">
+            <img class='slide' src="./image/Courier-Service.jfif" alt="">
+
         </div>
     </div>
 
-    <!-- nav for small screens -->
-    
-    <div id='nav-small' class="nav-small">
-        
-        <div><a href="./">Troydreamville</a></div>
-        <div><a href='javascript:void(0)' onclick="openNav()">&#9776;</a></div>
-        
-    </div>
-
-    <!-- Mobile Side Nav -->
-    <div id="myNav" class="overlay" style="display:none;"> 
-        <a style='color:white;text-decoration: none;' href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
-        
-        <nav class="overlay-nav"> 
-            <div class="side-nav">
-                <div><a onclick="closeNav()" href='./about-company.html'>About</a></div>
-                <div><a onclick="closeNav()" href='./services-company.html'>Services</a></div>
-                <div><a onclick="closeNav()" href="./contact-company.html">Contact</a></div>
-            </div>
-        </nav>
-    </div>
-    
-<!-- Header for About Content -->
- 
-<div class="as about-content">
-    <div>Who we are and what we do</div>
-    <div>A little Info about what we're all about, what we do and our team.</div>
+</header>
 </div>
 
-</header>
-
-<section style="overflow: hidden;" class='contain'>
+<section id='wes' style="overflow: hidden;" class='contain'>
 
 <div data-aos="fade-right" class="about-section-div">
 
@@ -161,23 +173,43 @@
 
 
 <script>
-    function closeNav() {
+    
+function closeNav() {
     document.getElementById("myNav").style.display = "none";
-    } 
+} 
 
-    function showme() {
-    document.getElementById("drop").classList.toggle("show");
-    }
+// function showme() {
+// document.getElementById("drop").classList.toggle("show");
+// }
 
+function openNav() {
+if (document.getElementById('myNav').style.display === 'block') {
+document.getElementById('myNav').style.display = 'none';
+} else {
+document.getElementById('myNav').style.display = 'block';
+}
+} 
+    
+var slideshows = document.querySelectorAll('[data-component="slideshow"]');
+slideshows.forEach(initSlideShow);
 
-    function openNav() {
-    if (document.getElementById('myNav').style.display === 'block') {
-        document.getElementById('myNav').style.display = 'none';
-    } else {
-        document.getElementById('myNav').style.display = 'block';
-    }
-    } 
+function initSlideShow(slideshow) {
 
+	var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`);
+
+	var index = 0, time = 5000;
+	slides[index].classList.add('active');
+
+	setInterval( () => {
+		slides[index].classList.remove('active');
+		
+		index++;
+		if (index === slides.length) index = 0;
+
+		slides[index].classList.add('active');
+
+	}, time);
+}
 </script>
 
 </body>
