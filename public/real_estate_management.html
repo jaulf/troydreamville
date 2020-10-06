@@ -17,22 +17,23 @@
 <body>
 
 <script>
-    AOS.init({
+    AOS.init({ 
     duration: 1300,
     once: true});
 </script>
 
-<div style="overflow: hidden;" class='header-for-rr'>
-  
+ 
+<div class='howl-z'>
+
     <!-- main nav  -->
     <div id='nav-first' class='nav-first'>
-        <div class='log-one'><a href='./'>Troydreamville | </a><span><a href='./real_estate_management.html'>Real Estate Management</a></span></div>
-
+        <div class='log-one'><a href='./'>Troydreamville</a></div>
+    
         <div class="log-two">
             <a href='./contact-company.html'>Contact Us</a>
         </div>
     </div>
-
+    
     <!-- nav for small screens -->
     
     <div id='nav-small' class="nav-small">
@@ -41,7 +42,7 @@
         <div><a href='javascript:void(0)' onclick="openNav()">&#9776;</a></div>
         
     </div>
-
+    
     <!-- Mobile Side Nav -->
     <div id="myNav" class="overlay" style="display:none;"> 
         <a style='color:white;text-decoration: none;' href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
@@ -52,20 +53,39 @@
                 <div><a onclick="closeNav()" href="./contact-company.html">Contact Us</a></div>
             </div>
         </nav>
-
+    
+    </div>
+    
+    <div class='haed-cvo'>
+        <div class='ds haed-on'>
+    
+            <h1>Real Estate Management</h1>
+    
+            <p>We Buy, Sell and Rent Out Properties Here. Our platform is the the easiest place to buy, sell and even rent houses with no hassles.</p>
+    
+            <div>
+                <a href='#wes'> Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    
+        <div id="slideshow-example" data-component="slideshow">
+            <div  class='ds haed-tw' role="list">
+                
+                <img id='nz' class='slide nz' src="./image/house4.jpg" alt="">
+                <img id='nz' class="slide nz" src="./image/house2.jpg" alt="">
+                <img id='nz' class="slide nz" src="./image/house3.jfif" alt="">
+                <img id='nz' class="slide nz" src="./image/house5.5.jpg" alt="">
+                <img id='nz' class="slide nz" src="./image/house6.jpg" alt="">
+                <img id='nz' class="slide nz" src="./image/interior.jpeg" alt="">
+    
+            </div>
+        </div>
+    
+    </div>
     </div>
 
-    <div class='header-content-real'>
 
-        <div>We Buy, Sell and Rent Out Properties Here</div>
-        <div>Our platform is the the easiest place to buy, sell and even rent houses with no hassles.</div>
-        <div class='bad'><a  href="#story" >Get Started</a></div>
-
-</div>
-</div>
-
-
-<section style="overflow: hidden;" data-aos="fade-right" class='story-cov'>
+<section id='wes' style="overflow: hidden;" data-aos="fade-right" class='story-cov'>
 
     <div id='story' class='story'>
 
@@ -301,6 +321,28 @@
         document.getElementById('myNav').style.display = 'block';
     }
     } 
+
+    
+var slideshows = document.querySelectorAll('[data-component="slideshow"]');
+slideshows.forEach(initSlideShow);
+
+function initSlideShow(slideshow) {
+
+	var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`);
+
+	var index = 0, time = 5000;
+	slides[index].classList.add('active');
+
+	setInterval( () => {
+		slides[index].classList.remove('active');
+		
+		index++;
+		if (index === slides.length) index = 0;
+
+        slides[index].classList.add('active');
+
+	}, time);
+}
 
 </script>
 
