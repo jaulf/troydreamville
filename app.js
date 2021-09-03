@@ -71,7 +71,6 @@ app.use(express.urlencoded({ extended : false}))
 
 // //for routes
 // app.use('/', require('./routes/index'));
-
 // //for user routes
 // app.use('/users', require('./routes/users'));
 
